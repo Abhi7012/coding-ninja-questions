@@ -4,6 +4,78 @@
 #include <iostream>
 using namespace std;
 
+
+
+
+
+//spiral print all the elements of 2d array
+void spiralPrint(int** input, int nRows, int nCols)
+{
+    //Write your code here
+    int m = nCols;
+    int n = nRows;
+    int cs, ce, rs, re;
+    cs = 0;
+    ce = m - 1;
+    rs = 0;
+    re = n - 1;
+    int i = 0;
+    int j = 0;
+    int count = 0;
+    while (count < m * n) {
+        if (i == rs && j == rs) {
+            for (; j <= ce; j++) {
+                cout << input[i][j] << " ";
+                count++;
+            }
+            rs++;
+            i++;
+            j--;
+
+        }
+
+        else if (i == rs && j == ce) {
+            for (; i <= re; i++) {
+                cout << input[i][j] << " ";
+                count++;
+
+            }
+            ce--;
+            j--;
+            i--;
+        }
+        else if (i == re && j == ce) {
+            for (; j >= cs; j--) {
+                cout << input[i][j] << " ";
+                count++;
+
+
+            }
+            re--;
+            i--;
+            j++;
+        }
+        else if (i == re && j == cs) {
+            for (; i >= rs; i--) {
+                cout << input[i][j] << " ";
+                count++;
+
+
+            }
+            cs++;
+            j++;
+            i++;
+        }
+    }
+
+
+
+}
+
+
+
+
+
 //find largest sum from the 2d array;
 void findLargest(int** input, int nRows, int mCols)
 {
@@ -178,7 +250,11 @@ void printSubstrings(char input[]) {
 
 int main()
 {
-    cout << "Hello World!\n";
+    int j = 0;
+    for (; j <= 4; j++) {
+
+    }
+    cout << j;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
