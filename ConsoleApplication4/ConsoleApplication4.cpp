@@ -4,7 +4,37 @@
 #include <iostream>
 using namespace std;
 
+//reverse each word
+void reverse(char input[], int start, int end) {
+    while (start <= end) {
+        int temp = input[start];
+        input[start] = input[end];
+        input[end] = temp;
+        start++;
+        end--;
+    }
 
+}
+
+
+
+void reverseEachWord(char input[]) {
+    // Write your code here
+    int start = 0;
+    int end = 0;
+    while (input[start] != '\0') {
+        if (input[end] == ' ' || input[end] == '\0') {
+            reverse(input, start, end - 1);
+            start = end + 1;
+            end++;
+        }
+        else {
+            end++;
+
+        }
+
+    }
+}
 
 
 
@@ -244,6 +274,59 @@ void printSubstrings(char input[]) {
             cout << endl;
         }
     }
+}
+
+
+//remove all occorence of given input
+void removeAllOccurrencesOfChar(char input[], char c) {
+    // Write your code here
+    int i = 0, j;
+    int count = 0;
+    while (input[count] != '\0') {
+        count++;
+
+    }
+    count--;
+    while (i < count) {
+        if (input[i] == c) {
+            for (j = i; j < count; j++) {
+                input[j] = input[j + 1];
+            }
+        }
+        else {
+            i++;
+
+
+        }
+    }
+
+}
+
+
+//highest occurence in a char array of small alphabets
+char highestOccurringChar(char input[]) {
+    // Write your code here
+
+    int arr[26] = { 0 };
+    int i = 0;
+    while (input[i] != '\0') {
+        arr[input[i] - 97]++;
+        i++;
+
+    }
+    int max = 0;
+    char maxelement = input[0];
+    for (int j = 0; j < 26; j++) {
+        if (arr[j] > max) {
+            max = arr[j];
+            maxelement = j + 97;
+
+
+        }
+    }
+    return maxelement;
+
+
 }
 
 
